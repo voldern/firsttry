@@ -1,0 +1,115 @@
+# depslib dependency file v1.0
+1224687673 source:/home/voldern/kode/demo/FirstTry/main.cpp
+	<Frontend2.h>
+	<Frontend2Graphics.h>
+	<OpenFrontend2.h>
+	<iostream>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Graphics.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2.h
+	<Frontend2/String.h>
+	<Frontend2/Managed.h>
+	<Frontend2/Array.h>
+	<Frontend2/Stack.h>
+	<Frontend2/AbstractMap.h>
+	<Frontend2/Pool.h>
+	<Frontend2/RedBlack.h>
+	<Frontend2/Set.h>
+	<Frontend2/Map.h>
+	<Frontend2/Tree.h>
+	<Frontend2/HashMap.h>
+	<Frontend2/Buffer.h>
+	<Frontend2IO.h>
+	<Frontend2IO/StandardIO.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/String.h
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Managed.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Array.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Stack.h
+	<Frontend2/Array.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/AbstractMap.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Pool.h
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/RedBlack.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Set.h
+	<Frontend2/Array.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Map.h
+	<Frontend2/Array.h>
+	<Frontend2/AbstractMap.h>
+	<Frontend2/RedBlack.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Tree.h
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/HashMap.h
+	<Frontend2/Map.h>
+	<Frontend2/String.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2/Buffer.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2IO.h
+	<Frontend2IO/Stream.h>
+	<Frontend2IO/FileSystem.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2IO/Stream.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2IO/FileSystem.h
+	<Frontend2IO/Stream.h>
+	<Frontend2IO/FileInfo.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2IO/FileInfo.h
+	<Frontend2IO/Stream.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2IO/StandardIO.h
+
+1224533294 /home/voldern/kode/c++/frontend2/openfrontend/include/OpenFrontend2.h
+	<Frontend2.h>
+	<Frontend2Graphics.h>
+	<Frontend2Sound.h>
+	<Frontend2Input.h>
+	<Frontend2Math.h>
+	<Frontend2IO.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Sound.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Input.h
+	<Frontend2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Math.h
+	<Frontend2.h>
+	<cmath>
+	<Frontend2Math/Vector2.h>
+	<Frontend2Math/Vector3.h>
+	<Frontend2Math/Vector4.h>
+	<Frontend2Math/Matrix3.h>
+	<Frontend2Math/Matrix4.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Math/Vector2.h
+	<Frontend2/String.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Math/Vector3.h
+	<Frontend2/String.h>
+	<Frontend2Math/Vector2.h>
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Math/Vector4.h
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Math/Matrix3.h
+
+1224533293 /home/voldern/kode/c++/frontend2/frontend2/include/Frontend2Math/Matrix4.h
+	<Frontend2Graphics.h>
+
