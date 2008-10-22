@@ -27,7 +27,7 @@ namespace Engine
         bool fullscreen;
 
         // The caption of the window
-        char* caption;
+        Frontend::String caption;
 
         // Should the demo run in debug mode?
         bool debug;
@@ -46,10 +46,7 @@ namespace Engine
         float time;
 
         // Music to play
-        char* music;
-
-        // Loads resources
-        void Load();
+        Frontend::String music;
 
     public:
         Demo();

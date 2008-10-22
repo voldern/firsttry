@@ -5,6 +5,8 @@ namespace FirstTry
 {
     FirstTry::FirstTry()
     {
+        this->debug = true;
+        this->caption = "FirstTry";
     }
 
     void FirstTry::run()
