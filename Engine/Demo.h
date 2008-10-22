@@ -48,6 +48,8 @@ namespace Engine
         // Music to play
         Frontend::String music;
 
+        void init();
+
     public:
         Demo();
 

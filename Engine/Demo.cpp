@@ -13,8 +13,10 @@ namespace Engine
         width = 800;
         height = 600;
         startTime = 0;
-        music = NULL;
+    }
 
+    void Demo::init()
+    {
         // Setup window and graphics device
         // OpenGL 2.0 and CG shader
         printf("Initializing window and graphics device\n");
@@ -24,6 +26,5 @@ namespace Engine
         // Setup sound
         printf("Initializing sound\n");
         this->sound = Frontend::Sound::CreateDevice(window);
-
     }
 }

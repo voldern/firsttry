@@ -11,6 +11,8 @@ namespace FirstTry
 
     void FirstTry::run()
     {
+        this->init();
+
         printf("Starting main loop\n");
         while (this->device->Update())
         {
