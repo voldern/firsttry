@@ -14,7 +14,7 @@ namespace Engine
         // Window
         Frontend::Window* window;
 
-        // Render device
+        // Graphics device
         Frontend::Graphics::Device* device;
 
         // Sound device
