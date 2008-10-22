@@ -1,4 +1,3 @@
-//*
 #include "Demo.h"
 
 namespace Engine
@@ -17,4 +16,3 @@ namespace Engine
 
     }
 }
-//*/
