@@ -1,0 +1,12 @@
+//*
+#include "Demo.h"
+
+namespace Engine
+{
+    Demo::Demo()
+    {
+        this->window = Frontend::CreatePlatformWindow(800, 600, "Test", 1);
+        this->device = Frontend::Graphics::Create
+    }
+}
+//*/
