@@ -1,4 +1,5 @@
 #include "FirstTry/FirstTry.h"
+#include "FirstTry/Scenes/Intro.h"
 
 int main()
 {
@@ -7,6 +8,12 @@ int main()
         printf("Starting FirstTry\n");
 
         FirstTry::FirstTry FirstTry;
+
+        printf("Loading scenes\n");
+
+        FirstTry::Scene::Intro introScene(FirstTry);
+        FirstTry.scenes.push_back(&introScene);
+
         FirstTry.init();
         FirstTry.run();
     }

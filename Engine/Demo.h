@@ -5,6 +5,8 @@
 #include <Frontend2Graphics.h>
 #include <OpenFrontend2.h>
 #include <iostream>
+#include <vector>
+#include "Scene.h"
 
 namespace Engine
 {
@@ -63,6 +65,9 @@ namespace Engine
         // Abscract function that the inherited class needs to implement
         // This is where the main loop should live
         virtual void run() = 0;
+
+        // Vector with all the scenes
+        std::vector<Engine::Scene*> scenes;
 
         // This variable holds the extra time we are in the future or the past
         // It's mainly used to reel / rewind

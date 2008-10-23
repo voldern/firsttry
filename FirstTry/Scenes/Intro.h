@@ -8,20 +8,20 @@ namespace FirstTry
 {
     namespace Scene
     {
-        class IntroScene: public Engine::Scene
+        class Intro: public Engine::Scene
         {
         private:
-            //FirstTry::FirstTry demo;
-            // error: 'FirstTry' in namespace 'FirstTry' does not name a type
+            class FirstTry::FirstTry demo;
+
         public:
-            IntroScene()
+            Intro(class FirstTry::FirstTry demo)
             {
-                //this->demo = demo;
+                this->demo = demo;
             }
 
             void draw()
             {
-
+                std::cout << "Scene 1\n";
             }
         };
     }
