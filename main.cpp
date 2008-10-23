@@ -7,6 +7,7 @@ int main()
         printf("Starting FirstTry\n");
 
         FirstTry::FirstTry FirstTry;
+        FirstTry.init();
         FirstTry.run();
     }
     catch(Frontend::Exception e)
