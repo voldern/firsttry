@@ -8,7 +8,7 @@ int main()
         FirstTry::FirstTry FirstTry;
 
         FirstTry::Scene::Intro introScene(FirstTry);
-        FirstTry.scenes.push_back(&introScene);
+        FirstTry.scenes.Add(&introScene);
 
         printf("Starting FirstTry\n");
         FirstTry.init();
