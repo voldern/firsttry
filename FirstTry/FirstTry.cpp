@@ -6,13 +6,12 @@ namespace FirstTry
     FirstTry::FirstTry()
     {
         this->debug = true;
+        this->fullscreen = false;
         this->caption = "FirstTry";
     }
 
     void FirstTry::run()
     {
-        this->init();
-
         printf("Starting main loop\n");
         while (this->device->Update() && !this->done)
         {

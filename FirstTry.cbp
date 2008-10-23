@@ -39,9 +39,16 @@
 			<Add directory="/home/voldern/kode/c++/frontend2/openfrontend/lib" />
 			<Add directory="/home/voldern/kode/c++/frontend2/frontend2utils/lib" />
 		</Linker>
+		<Unit filename="Engine/Demo.cpp" />
+		<Unit filename="Engine/Demo.h" />
+		<Unit filename="FirstTry/FirstTry.cpp" />
+		<Unit filename="FirstTry/FirstTry.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
-			<code_completion />
+			<code_completion>
+				<search_path add="/home/voldern/kode/c++/frontend2/frontend2/include" />
+				<search_path add="/home/voldern/kode/c++/frontend2/frontend2utils/include" />
+			</code_completion>
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />

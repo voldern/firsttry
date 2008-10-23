@@ -3,3 +3,5 @@
 *.save
 /*/*.save
 *.depend
+*.o
+/*/*.o

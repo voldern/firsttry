@@ -20,11 +20,17 @@ namespace Engine
         // Sound device
         Frontend::Sound::Device* sound;
 
+        // Keyboard interface
+        Frontend::Input::Keyboard* keyboard;
+
         // Is the demo finished?
         bool done;
 
         // Should the demo run in fullscreen?
         bool fullscreen;
+
+        // Should the demo run with vertical sync enabled?
+        bool verticalSync;
 
         // The caption of the window
         Frontend::String caption;
@@ -48,15 +54,18 @@ namespace Engine
         // Music to play
         Frontend::String music;
 
-        void init();
-
     public:
         Demo();
 
+        // This function initializes the window, sound, graphics device and etc
+        virtual void init();
+
         // Abscract function that the inherited class needs to implement
+        // This is where the main loop should live
         virtual void run() = 0;
 
-        //
+        // This variable holds the extra time we are in the future or the past
+        // It's mainly used to reel / rewind
         float extraTime;
 
         // Get current time into the demo
@@ -65,7 +74,7 @@ namespace Engine
             return this->time;
         }
 
-
+        // Get width and height
         int getWidth()
         {
             return this->width;
@@ -74,6 +83,12 @@ namespace Engine
         int getHeight()
         {
             return this->height;
+        }
+
+        // Are we running in debug mode?
+        bool debugMode()
+        {
+            return this->debug;
         }
     };
 }
