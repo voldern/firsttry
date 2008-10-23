@@ -17,15 +17,17 @@ namespace FirstTry
             Intro(class FirstTry::FirstTry demo)
             {
                 this->demo = demo;
+                this->length = 50;
             }
 
             void load()
             {
+                std::cout << "Loading intro scene!\n";
             }
 
             void draw()
             {
-                std::cout << "Scene 1\n";
+                //std::cout << "Scene 1\n";
             }
         };
     }

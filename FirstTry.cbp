@@ -41,8 +41,10 @@
 		</Linker>
 		<Unit filename="Engine/Demo.cpp" />
 		<Unit filename="Engine/Demo.h" />
+		<Unit filename="Engine/Scene.h" />
 		<Unit filename="FirstTry/FirstTry.cpp" />
 		<Unit filename="FirstTry/FirstTry.h" />
+		<Unit filename="FirstTry/Scenes/Intro.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion>

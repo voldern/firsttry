@@ -12,6 +12,11 @@ namespace FirstTry
 
     void FirstTry::run()
     {
+        // Loading all the scenes
+        for (int i = 0; i < this->scenes.size(); i++) {
+            this->scenes[i]->load();
+        }
+
         printf("Starting main loop\n");
         while (this->device->Update() && !this->done)
         {
@@ -19,7 +24,7 @@ namespace FirstTry
 
             // Loop over all the scenes and run them
             for (int i = 0; i < this->scenes.size(); i++) {
-                this->scenes[i]->draw();
+                    this->scenes[i]->draw();
             }
         }
     }

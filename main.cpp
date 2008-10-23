@@ -7,7 +7,6 @@ int main()
     {
         FirstTry::FirstTry FirstTry;
 
-        printf("Loading scenes\n");
         FirstTry::Scene::Intro introScene(FirstTry);
         FirstTry.scenes.push_back(&introScene);
 
