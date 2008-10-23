@@ -5,15 +5,13 @@ int main()
 {
     try
     {
-        printf("Starting FirstTry\n");
-
         FirstTry::FirstTry FirstTry;
 
         printf("Loading scenes\n");
-
         FirstTry::Scene::Intro introScene(FirstTry);
         FirstTry.scenes.push_back(&introScene);
 
+        printf("Starting FirstTry\n");
         FirstTry.init();
         FirstTry.run();
     }

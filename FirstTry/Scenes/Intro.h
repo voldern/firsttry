@@ -19,6 +19,10 @@ namespace FirstTry
                 this->demo = demo;
             }
 
+            void load()
+            {
+            }
+
             void draw()
             {
                 std::cout << "Scene 1\n";
