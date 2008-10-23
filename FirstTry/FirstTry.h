@@ -2,6 +2,7 @@
 #define FIRSTTRY_H_INCLUDED
 
 #include "../Engine/Demo.h"
+#include "Scenes/Intro.h"
 
 namespace FirstTry
 {
