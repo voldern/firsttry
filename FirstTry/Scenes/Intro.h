@@ -14,10 +14,10 @@ namespace FirstTry
             class FirstTry::FirstTry demo;
 
         public:
-            Intro(class FirstTry::FirstTry demo)
+            Intro(class FirstTry::FirstTry demo, float length)
             {
                 this->demo = demo;
-                this->length = 50;
+                this->length = length;
             }
 
             void load()

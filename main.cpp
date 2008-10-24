@@ -7,7 +7,7 @@ int main()
     {
         FirstTry::FirstTry FirstTry;
 
-        FirstTry::Scene::Intro* introScene = new FirstTry::Scene::Intro(FirstTry);
+        FirstTry::Scene::Intro* introScene = new FirstTry::Scene::Intro(FirstTry, 50);
         FirstTry.scenes.Add(introScene);
 
         printf("Starting FirstTry\n");
