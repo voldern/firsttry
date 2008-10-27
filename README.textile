@@ -6,8 +6,6 @@ I'm going to try to create a little demo using "Frontend 2.0 Beta 3":http://fron
 
 h3. Folders
 
-*Engine/* This is where the little engine that FirstTry will use will live.
-
 *FirstTry/* This is where the main application will live
 
 *FirstTry/Scenes/* This is where the scenes will live
