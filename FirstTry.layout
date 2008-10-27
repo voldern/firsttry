@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
-	<File name="Engine/Demo.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="1102" topLine="9" />
-	</File>
-	<File name="Engine/Demo.h" open="1" top="0" tabpos="4">
-		<Cursor position="1543" topLine="52" />
-	</File>
-	<File name="Engine/Scene.h" open="1" top="0" tabpos="7">
-		<Cursor position="144" topLine="0" />
-	</File>
-	<File name="FirstTry/FirstTry.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="661" topLine="0" />
-	</File>
-	<File name="FirstTry/FirstTry.h" open="1" top="0" tabpos="2">
-		<Cursor position="89" topLine="0" />
-	</File>
-	<File name="FirstTry/Scenes/Intro.h" open="1" top="1" tabpos="6">
-		<Cursor position="429" topLine="0" />
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="320" topLine="0" />
+	<File name="main.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="10" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
