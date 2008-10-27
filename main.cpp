@@ -20,6 +20,10 @@ int main()
 
     try
     {
+        Utils::RAudioStream oggStream("Data/sound.ogg");
+        Utils::Audio::Outlet outlet(oggStream, FirstTry.GetSoundDevice());
+        outlet.Play();
+
         while(FirstTry.Update())
         {
 
