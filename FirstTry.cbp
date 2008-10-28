@@ -35,16 +35,10 @@
 			<Add directory="/home/voldern/kode/c++/frontend2/openfrontend/include" />
 		</Compiler>
 		<Linker>
-			<Add option="-lfrontend2_fwg -lfrontend2graphics_cg_fwg -lfrontend2input_fwg -lfrontend2io_fwg -lfrontend2math_fwg -lfrontend2sound_portaudio_fwg -lfrontend2utils_fwg -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio" />
+			<Add option="-lfrontend2utils_fwg -lfrontend2_fwg -lfrontend2graphics_cg_fwg -lfrontend2input_fwg -lfrontend2io_fwg -lfrontend2math_fwg -lfrontend2sound_portaudio_fwg -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio -logg -lvorbis -lvorbisfile" />
 			<Add directory="/home/voldern/kode/c++/frontend2/openfrontend/lib" />
 			<Add directory="/home/voldern/kode/c++/frontend2/frontend2utils/lib" />
 		</Linker>
-		<Unit filename="Engine/Demo.cpp" />
-		<Unit filename="Engine/Demo.h" />
-		<Unit filename="Engine/Scene.h" />
-		<Unit filename="FirstTry/FirstTry.cpp" />
-		<Unit filename="FirstTry/FirstTry.h" />
-		<Unit filename="FirstTry/Scenes/Intro.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion>
