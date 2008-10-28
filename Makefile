@@ -15,15 +15,12 @@
 
 
 OBJS_FIRSTTRY=\
-	main.o\
-	FirstTry/FirstTry.o
+	main.o
 
-OBJS_ENGINE=\
-	Engine/Demo.o
+#OBJS_ENGINE=\
 
 OBJS_DEMO=\
-	$(OBJS_FIRSTTRY) \
-	$(OBJS_ENGINE)
+	$(OBJS_FIRSTTRY)
 
 CC=g++
 CFLAGS= -Wall -m32 -g
@@ -37,7 +34,7 @@ LIB_PATH=\
 	-L/home/voldern/kode/c++/frontend2/openfrontend/lib\
 	-L/home/voldern/kode/c++/frontend2/frontend2utils/lib
 
-LIBS= -lfrontend2_fwg -lfrontend2graphics_cg_fwg -lfrontend2input_fwg -lfrontend2io_fwg -lfrontend2math_fwg -lfrontend2sound_portaudio_fwg -lfrontend2utils_fwg -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio
+LIBS= -lfrontend2utils_fwg -lfrontend2_fwg -lfrontend2graphics_cg_fwg -lfrontend2input_fwg -lfrontend2io_fwg -lfrontend2math_fwg -lfrontend2sound_portaudio_fwg -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio -logg -lvorbis -lvorbisfile
 
 firsttry: $(OBJS_DEMO)
 	$(CC) $(INCLUDE_PATH) $(LIB_PATH) $(CFLAGS) $(OBJS_DEMO) $(LIBS) -o bin/$@
