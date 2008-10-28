@@ -1,15 +1,18 @@
-#include <Frontend2.h>
-#include <Frontend2Graphics.h>
-#include <Frontend2Utils.h>
-#include <iostream>
-
-using namespace Frontend;
+#include "FirstTry/FirstTry.h"
+#include "FirstTry/Scenes/Intro.h"
 
 int main()
 {
     try
     {
-        Utils::Application FirstTry;
+        FirstTry::FirstTry FirstTry;
+
+        FirstTry::Scene::Intro* introScene = new FirstTry::Scene::Intro(FirstTry, 50);
+        FirstTry.scenes.Add(introScene);
+
+        printf("Starting FirstTry\n");
+        FirstTry.init();
+        FirstTry.run();
     }
     catch(Frontend::Exception e)
     {
