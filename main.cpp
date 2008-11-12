@@ -26,7 +26,7 @@ int main()
 
         while(FirstTry.Update())
         {
-
+            FirstTry.GetGraphicsDevice()->Clear(Frontend::Graphics::ClearBuffersAll, 0, 0, 1, 0, 1, 0);
         }
     }
     catch(Frontend::Exception e)
