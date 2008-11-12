@@ -35,7 +35,7 @@ LIB_PATH=\
 	-L/home/voldern/kode/c++/frontend2/openfrontend/lib\
 	-L/home/voldern/kode/c++/frontend2/frontend2utils/lib
 
-LIBS= -lfrontend2utils_fwg -lfrontend2_fwg -lfrontend2graphics_cg_fwg -lfrontend2input_fwg -lfrontend2io_fwg -lfrontend2math_fwg -lfrontend2sound_portaudio_fwg -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio -logg -lvorbis -lvorbisfile
+LIBS= -lfrontend2utils_fwg -lopenfrontend2 -lopenfrontend2graphics_cg -lopenfrontend2input -lopenfrontend2io -lopenfrontend2math -lopenfrontend2sound_portaudio -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio -logg -lvorbis -lvorbisfile
 
 firsttry: $(OBJS_DEMO)
 	$(CC) $(INCLUDE_PATH) $(LIB_PATH) $(CFLAGS) $(OBJS_DEMO) $(LIBS) -o bin/$@
