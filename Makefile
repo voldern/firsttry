@@ -15,29 +15,24 @@
 
 
 OBJS_FIRSTTRY=\
-	main.o\
-	FirstTry/FirstTry.o
-
-OBJS_ENGINE=\
-	Engine/Demo.o
+	main.o
 
 OBJS_DEMO=\
-	$(OBJS_FIRSTTRY) \
-	$(OBJS_ENGINE)
+	$(OBJS_FIRSTTRY)
 
 CC=g++
-CFLAGS= -Wall -m32 -g
+CFLAGS=-Wall -m32 -g
 
 INCLUDE_PATH=\
-	-I/home/voldern/kode/c++/frontend2/frontend2/include\
-	-I/home/voldern/kode/c++/frontend2/frontend2utils/include\
-	-I/home/voldern/kode/c++/frontend2/openfrontend/include
+	-I/home/voldern/kode/c++/frontend/frontend2/include\
+	-I/home/voldern/kode/c++/frontend/frontend2utils/include\
+	-I/home/voldern/kode/c++/frontend/openfrontend/include
 
 LIB_PATH=\
-	-L/home/voldern/kode/c++/frontend2/openfrontend/lib\
-	-L/home/voldern/kode/c++/frontend2/frontend2utils/lib
+	-L/home/voldern/kode/c++/frontend/openfrontend/lib\
+	-L/home/voldern/kode/c++/frontend/frontend2utils/lib
 
-LIBS= -lfrontend2_fwg -lfrontend2graphics_cg_fwg -lfrontend2input_fwg -lfrontend2io_fwg -lfrontend2math_fwg -lfrontend2sound_portaudio_fwg -lfrontend2utils_fwg -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio
+LIBS= -lopenfrontend2_cg -lfrontend2utils -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio
 
 firsttry: $(OBJS_DEMO)
 	$(CC) $(INCLUDE_PATH) $(LIB_PATH) $(CFLAGS) $(OBJS_DEMO) $(LIBS) -o bin/$@
