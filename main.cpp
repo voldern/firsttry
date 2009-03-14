@@ -2,18 +2,17 @@
 #include <Frontend2Utils.h>
 
 using namespace Frontend;
-
-int main(int argc, char **argv)
+using namespace Frontend::Utils;
+using namespace Frontend::Utils::Simple;
+int main(int argc, char** argv)
 {
-  Utils::Simple::SimpleSetup setup(GUI::CreateNativeWindowManager(), Graphics::OpenFrontendGL2CG());
+  SimpleSetup setup(GUI::CreateNativeWindowManager(), Graphics::OpenFrontendGL2CG());
   setup.SetResolution(800, 600);
-  setup.SetTitle("FirstTry");
+  setup.SetTitle("Hello Frontend");
   setup.Start();
-
-  while (setup.Update()) 
+    
+  while (setup.Update())
     {
-      // Loop
+      setup.GetGraphicsDevice()->Clear(Graphics::ClearBuffersAll, 1, 0, 0, 0, 1, 0);
     }
-
-  return 0;
 }

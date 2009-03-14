@@ -32,7 +32,8 @@ LIB_PATH=\
 	-L/home/voldern/kode/c++/frontend/openfrontend/lib\
 	-L/home/voldern/kode/c++/frontend/frontend2utils/lib
 
-LIBS= -lopenfrontend2_cg -lfrontend2utils -lGL -lGLU -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lpthread -lportaudio
+LIBS= -lfrontend2utils -lopenfrontend2_cg -lGL -lGLU -lpthread -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lportaudio -logg\
+	-lvorbis -lvorbisfile
 
 firsttry: $(OBJS_DEMO)
 	$(CC) $(INCLUDE_PATH) $(LIB_PATH) $(CFLAGS) $(OBJS_DEMO) $(LIBS) -o bin/$@
