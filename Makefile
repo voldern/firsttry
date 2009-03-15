@@ -15,8 +15,7 @@
 
 
 OBJS_FIRSTTRY=\
-	main.o\
-	scenes/FirstScene.o
+	main.o
 
 OBJS_DEMO=\
 	$(OBJS_FIRSTTRY)
@@ -25,16 +24,18 @@ CC=g++
 CFLAGS=-Wall -m32 -g
 
 INCLUDE_PATH=\
-	-I/home/voldern/kode/c++/frontend/frontend2/include\
-	-I/home/voldern/kode/c++/frontend/frontend2utils/include\
-	-I/home/voldern/kode/c++/frontend/openfrontend/include
+	-I/home/voldern/Kode/c++/frontend/frontend2/include\
+	-I/home/voldern/Kode/c++/frontend/frontend2utils/include\
+	-I/home/voldern/Kode/c++/frontend/openfrontend/include
 
 LIB_PATH=\
-	-L/home/voldern/kode/c++/frontend/openfrontend/lib\
-	-L/home/voldern/kode/c++/frontend/frontend2utils/lib
+	-L/home/voldern/Kode/c++/frontend/openfrontend/lib\
+	-L/home/voldern/Kode/c++/frontend/frontend2utils/lib
 
 LIBS= -lfrontend2utils -lopenfrontend2_cg -lGL -lGLU -lpthread -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lportaudio -logg\
 	-lvorbis -lvorbisfile
+
+all: firsttry
 
 firsttry: $(OBJS_DEMO)
 	$(CC) $(INCLUDE_PATH) $(LIB_PATH) $(CFLAGS) $(OBJS_DEMO) $(LIBS) -o bin/$@
