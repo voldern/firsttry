@@ -14,10 +14,14 @@
 # along with FirstTry.  If not, see <http://www.gnu.org/licenses/>.
 
 
+OBJS_ENGINE=\
+	engine/Scene.o
+
 OBJS_FIRSTTRY=\
 	main.o
 
 OBJS_DEMO=\
+	$(OBJS_ENGINE)\
 	$(OBJS_FIRSTTRY)
 
 CC=g++

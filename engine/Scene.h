@@ -4,13 +4,15 @@
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
 
-namespace Engine {
+namespace FirstEngine {
   class Scene
   {
-  private:
-    Frontend::Utils::Simple::SimpleSetup *setup;
+  protected:
+    Frontend::Utils::Simple::SimpleSetup *engine;
 
-  
+  public:
+    Scene(Frontend::Utils::Simple::SimpleSetup &engine);
+    virtual void run() = 0;
   };
 }
 
