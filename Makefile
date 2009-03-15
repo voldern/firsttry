@@ -15,7 +15,8 @@
 
 
 OBJS_FIRSTTRY=\
-	main.o
+	main.o\
+	scenes/FirstScene.o
 
 OBJS_DEMO=\
 	$(OBJS_FIRSTTRY)
