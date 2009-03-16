@@ -41,16 +41,16 @@ namespace FirstTry
         float turnSpeed = 0.2f;
         float frameTime = this->engine->GetFrameTime();
 
-        if (this->keyboard->KeyDown(GUI::KeyShift)) {
-            walkSpeed = 500.0f;
-            IO::StdOut().WriteTextLine("Super speed!");
-        }
+        // Shift to get super speed!
+        if (this->keyboard->KeyDown(GUI::KeyShift)) walkSpeed = 500.0f;
 
+        // Navigate with WASD
         if (this->keyboard->KeyDown('W')) this->renderer->GetCamera()->Move(frameTime * walkSpeed);
         if (this->keyboard->KeyDown('S')) this->renderer->GetCamera()->Move(-frameTime * walkSpeed);
         if (this->keyboard->KeyDown('A')) this->renderer->GetCamera()->Strafe(-frameTime * walkSpeed);
         if (this->keyboard->KeyDown('D')) this->renderer->GetCamera()->Strafe(frameTime * walkSpeed);
       
+        // Navigate with the mouse
         Math::Vector2i mouseDelta = this->mouse->Lock(this->engine->GetWindow());
         this->renderer->GetCamera()->Turn(mouseDelta.x * turnSpeed);
         this->renderer->GetCamera()->Pitch(- mouseDelta.y * turnSpeed);
