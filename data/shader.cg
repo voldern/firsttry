@@ -1,0 +1,31 @@
+float4x4 WorldViewProjection;
+sampler2D DiffuseMap;
+sampler2D AmbientMap;
+
+struct VSInput
+{
+	float4 Position: F_POSITION;
+	float2 TexCoord: F_TEXCOORD0;
+	float2 TexCoord1: F_TEXCOORD2;
+};
+
+struct VSOutput
+{
+	float4 Position: POSITION;
+	float2 TexCoord: TEXCOORD;
+	float2 TexCoord1: TEXCOORD1;
+};
+
+VSOutput vsMain(VSInput Input)
+{
+	VSOutput Output;
+	Output.Position = mul(WorldViewProjection, Input.Position);
+	Output.TexCoord = Input.TexCoord;
+	Output.TexCoord1 = Input.TexCoord1;
+	return Output;
+}
+
+float4 psMain(VSOutput Input): COLOR
+{
+	return tex2D(DiffuseMap, Input.TexCoord) * tex2D(AmbientMap, Input.TexCoord1);
+}
