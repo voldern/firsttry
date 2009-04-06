@@ -42,5 +42,5 @@ int main(int argc, char** argv)
         setup.HandleException(e);
     }
 
-    return 1;
+    return 0;
 }
