@@ -31,6 +31,7 @@ namespace FirstEngine {
         this->frameTime = 0.001;
         this->fps = 1000.0;
         this->exitOnEsc = false;
+        this->handleInput = false;
     }
     
     /*
@@ -57,7 +58,8 @@ namespace FirstEngine {
 			
     void Demo::SetFullscreenDisplay(Display* display)
     {
-        if (started) throw Exception("Demo::SetFullscreenDisplay(): Can not change graphics flags while Demo is running");
+        if (started) 
+            throw Exception("Demo::SetFullscreenDisplay(): Can not change graphics flags while Demo is running");
         this->fullscreenDisplay = display;
         if (display) SetWindowStyle(GUI::WindowStyleNone);
     }
@@ -82,13 +84,15 @@ namespace FirstEngine {
 
     void Demo::SetMultiSamples(int ms)
     {
-        if (started) throw Exception("Demo::SetMultiSamples(): Can not change multi sample level while Demo is running");
+        if (started) 
+            throw Exception("Demo::SetMultiSamples(): Can not change multi sample level while Demo is running");
         this->multiSamples = ms;
     }
 
     void Demo::SetFileSystemRoot(String root)
     {
-        if (started) throw Exception("Demo::SetFileSystemRoot(): Can not change file system root while Demo is running");
+        if (started) 
+            throw Exception("Demo::SetFileSystemRoot(): Can not change file system root while Demo is running");
         this->fileSystem = new IO::StdFileSystem(root);
     }
 
@@ -107,13 +111,22 @@ namespace FirstEngine {
 
     void Demo::SetDepthStencilFormat(Graphics::DepthStencilFormat dsFmt)
     {
-        if (started) throw Exception("Demo::SetDepthStencilFormat(): Can not change depth/stencil format while Demo is running");
+        if (started) 
+            throw Exception("Demo::SetDepthStencilFormat(): Can not change depth/stencil format while Demo is running");
         this->depthStencilFormat = dsFmt;
     }
 
     void Demo::SetExitOnEsc(bool exit)
     {
+        if (exit == true && handleInput == false)
+            throw new Exception("Demo::SetExitOnEsc: Cannot set to true if handleInput is not true");
         this->exitOnEsc = exit;
+    }
+
+    void Demo::SetHandleInput(bool handle)
+    {
+        if (started) throw new Exception("Demo::SetHandleInput(): Can not set handle input after Demo is started");
+        this->handleInput = handle;
     }
 
     /**
@@ -252,8 +265,10 @@ namespace FirstEngine {
         timer = new Timer();
 
         // Set up keyboard and mouse
-        this->keyboard = new Keyboard(window);
-        this->mouse = new Mouse(window);
+        if (handleInput) {
+            this->keyboard = new Keyboard(window);
+            this->mouse = new Mouse(window);
+        }
 
         // Set up state
         state = new State();
@@ -279,6 +294,7 @@ namespace FirstEngine {
 
     void Demo::HandleException(Exception e)
     {
-        windowManager->ShowMessageDialog(0, e.GetMessage(), "FirstEngine Exception", GUI::DialogButtonsOK, GUI::DialogHintError);
+        windowManager->ShowMessageDialog(0, e.GetMessage(), "FirstEngine Exception", 
+                                         GUI::DialogButtonsOK, GUI::DialogHintError);
     }
 } // Namespace FirstEngine

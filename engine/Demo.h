@@ -41,6 +41,7 @@ namespace FirstEngine {
         bool showCursor;
         bool started;
 
+        bool handleInput;
         bool exitOnEsc;
     
       public:
@@ -66,6 +67,7 @@ namespace FirstEngine {
         void SetDepthStencilFormat(Graphics::DepthStencilFormat dsFmt);
         void SetShowCursor(bool showCursor);
         void SetExitOnEsc(bool exit);
+        void SetHandleInput(bool handle);
 
         // Getters
         GUI::WindowManager* GetWindowManager() { return windowManager; }

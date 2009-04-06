@@ -18,6 +18,7 @@ int main(int argc, char** argv)
  
         setup.SetResolution(1024, 768);
         setup.SetFileSystemRoot("data");
+        setup.SetHandleInput(true);
         setup.SetExitOnEsc(true);
         setup.Start();
 
