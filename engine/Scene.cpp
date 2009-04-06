@@ -1,10 +1,9 @@
-#include <OpenFrontend2.h>
-#include <Frontend2Utils.h>
 #include "Scene.h"
+#include "Demo.h"
 
 namespace FirstEngine 
 {
-  Scene::Scene(Frontend::Utils::Simple::SimpleSetup &engine)
+  Scene::Scene(FirstEngine::Demo &engine)
   {
     this->engine = &engine;
   }

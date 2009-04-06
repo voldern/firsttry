@@ -2,6 +2,7 @@
 #define TEST_SCENE_H_INCLUDED
 
 #include "../engine/Scene.h"
+#include "../engine/Demo.h"
 
 using namespace Frontend;
 using namespace Frontend::Utils;
@@ -19,7 +20,7 @@ namespace FirstTry
       Keyboard *keyboard;
       Mouse *mouse;
     public:
-    TestScene(Frontend::Utils::Simple::SimpleSetup &engine) : FirstEngine::Scene(engine)
+    TestScene(FirstEngine::Demo &engine) : FirstEngine::Scene(engine)
         {
           this->level = new RScene("level.DAE");
           this->shader = new RProgram("shader.cg");

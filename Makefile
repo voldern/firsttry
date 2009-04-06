@@ -15,7 +15,8 @@
 
 
 OBJS_ENGINE=\
-	engine/Scene.o
+	engine/Scene.o\
+	engine/Demo.o
 
 OBJS_FIRSTTRY=\
 	main.o
