@@ -3,8 +3,8 @@
 
 namespace FirstEngine 
 {
-  Scene::Scene(FirstEngine::Demo &engine)
+  Scene::Scene(FirstEngine::Demo &demo)
   {
-    this->engine = &engine;
+    this->demo = &demo;
   }
 }

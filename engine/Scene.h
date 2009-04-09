@@ -9,10 +9,10 @@ namespace FirstEngine {
   class Scene
   {
   protected:
-    FirstEngine::Demo *engine;
+    FirstEngine::Demo *demo;
 
   public:
-    Scene(FirstEngine::Demo &engine);
+    Scene(FirstEngine::Demo &demo);
     virtual void run() = 0;
   };
 }
