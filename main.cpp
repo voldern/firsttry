@@ -12,14 +12,15 @@ using namespace Frontend::Utils;
 int main(int argc, char** argv)
 {
     FirstEngine::Demo setup(GUI::CreateNativeWindowManager(), Graphics::OpenFrontendGL2CG());
-  
+
     try {
         setup.GetStdOut()->WriteTextLine("Setting up enviroment");
- 
+
         setup.SetResolution(1024, 768);
         setup.SetFileSystemRoot("data");
         setup.SetHandleInput(true);
         setup.SetExitOnEsc(true);
+        setup.SetEnableDebug(true);
         setup.Start();
 
         double startTime = setup.GetTime();

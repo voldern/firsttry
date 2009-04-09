@@ -3,14 +3,18 @@
 
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
+#include "Debug.h"
 
 using namespace Frontend;
 using namespace Frontend::Utils;
 
-namespace FirstEngine {
+namespace FirstEngine 
+{
+    class Debug;
+
     class Demo: public Object
     {
-      protected:
+    protected:
         Graphics::Device::Factory *graphicsBackend;
         Math::Vector2i resolution;
         Graphics::DepthStencilFormat depthStencilFormat;
@@ -35,23 +39,24 @@ namespace FirstEngine {
         Managed<Timer> timer;
         Managed<Keyboard> keyboard;
         Managed<Mouse> mouse;
-        double time, frameTime, fps;
-    
         Managed<State> state;
-        bool showCursor;
-        bool started;
+        Managed<Debug> debug;
+        double time, frameTime, fps;
 
+        bool started;    
+        bool showCursor;
         bool handleInput;
         bool exitOnEsc;
+        bool enableDebug;
     
-      public:
+    public:
         /**
          * Creates a Demo and initialized default values for all settings.
          * @param windowManager The window manager to use (i.e. OpenFrontend's GUI::CreateNativeWindowManager()).
          * @param backedn The Graphics::Device::Factory (graphics backend) to use (i.e. Graphics::OpenFrontendGL2CG())
          */
         Demo(GUI::WindowManager *windowManager, Graphics::Device::Factory *graphicsBackend);
-
+        
         void HandleException(Exception e);
     
         // Setters
@@ -68,6 +73,7 @@ namespace FirstEngine {
         void SetShowCursor(bool showCursor);
         void SetExitOnEsc(bool exit);
         void SetHandleInput(bool handle);
+        void SetEnableDebug(bool enable);
 
         // Getters
         GUI::WindowManager* GetWindowManager() { return windowManager; }
@@ -87,6 +93,7 @@ namespace FirstEngine {
         State* GetState();
         Keyboard* GetKeyboard();
         Mouse* GetMouse();
+        bool GetHandleInput();
 
         double GetTime();
         double GetFrameTime();

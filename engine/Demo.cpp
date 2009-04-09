@@ -1,12 +1,13 @@
-#include "Demo.h"
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
+#include "Demo.h"
+#include "Debug.h"
 
 using namespace Frontend;
 using namespace Frontend::Utils;
 
-namespace FirstEngine {
-
+namespace FirstEngine 
+{
     Demo::Demo(GUI::WindowManager *windowManager, Graphics::Device::Factory *graphicsBackend)
     {
         this->windowManager = windowManager;
@@ -32,8 +33,9 @@ namespace FirstEngine {
         this->fps = 1000.0;
         this->exitOnEsc = false;
         this->handleInput = false;
+        this->enableDebug = false;
     }
-    
+
     /*
      * Setters
      */
@@ -119,7 +121,7 @@ namespace FirstEngine {
     void Demo::SetExitOnEsc(bool exit)
     {
         if (exit == true && handleInput == false)
-            throw new Exception("Demo::SetExitOnEsc: Cannot set to true if handleInput is not true");
+            throw Exception("Demo::SetExitOnEsc: Cannot set to true if handleInput is not true");
         this->exitOnEsc = exit;
     }
 
@@ -127,6 +129,12 @@ namespace FirstEngine {
     {
         if (started) throw new Exception("Demo::SetHandleInput(): Can not set handle input after Demo is started");
         this->handleInput = handle;
+    }
+
+    void Demo::SetEnableDebug(bool enable)
+    {
+        if (started) throw new Exception("Demo::SetEnableDebug(): Can not enable debug after Demo is started");
+        this->enableDebug = enable;
     }
 
     /**
@@ -219,14 +227,21 @@ namespace FirstEngine {
 
     Keyboard* Demo::GetKeyboard()
     {
-        if (!started) throw Exception("Demo::GetState(): Can not get keyboard before Demo is started");
+        if (!started) throw Exception("Demo::GetKeyboard(): Can not get keyboard before Demo is started");
+        if (!handleInput) throw Exception("Demo::GetKeyboard(): Can not get keyboard if handleInput is false");
         return keyboard;
     }
 
     Mouse* Demo::GetMouse()
     {
         if (!started) throw Exception("Demo::GetState(): Can not get mouse before Demo is started");
+        if (!handleInput) throw Exception("Demo::GetMouse(): Can not get mouse if handleInput is false");
         return mouse;
+    }
+
+    bool Demo::GetHandleInput()
+    {
+        return handleInput;
     }
 
     void Demo::Start()
@@ -276,7 +291,11 @@ namespace FirstEngine {
         state->GraphicsDevice.Push(graphicsDevice);
 
         // Done
-        started = true;		
+        started = true;
+        
+        // Debug
+        if (enableDebug)
+          this->debug = new Debug(this);
     }
 
     bool Demo::Update()
@@ -284,6 +303,10 @@ namespace FirstEngine {
         // Check if we should exit
         if (exitOnEsc == true && keyboard->KeyDown(GUI::KeyEsc))
             return false;
+
+        // Debug
+        if (enableDebug)
+          debug->Run();
 
         time = timer->GetTime();
         frameTime = timer->GetInterval();

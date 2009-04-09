@@ -16,7 +16,8 @@
 
 OBJS_ENGINE=\
 	engine/Scene.o\
-	engine/Demo.o
+	engine/Demo.o\
+	engine/Debug.o
 
 OBJS_FIRSTTRY=\
 	main.o
@@ -26,7 +27,7 @@ OBJS_DEMO=\
 	$(OBJS_FIRSTTRY)
 
 CC=g++
-CFLAGS=-Wall -m32 -g
+CFLAGS=-Wall -O3 -m32 -g
 
 INCLUDE_PATH=\
 	-I/home/voldern/Kode/c++/frontend/frontend2/include\
