@@ -32,10 +32,10 @@ int main(int argc, char** argv)
         while (setup.Update()) {
             // Clear the screen
             setup.GetGraphicsDevice()->Clear(Graphics::ClearBuffersAll, 1, 0, 0, 0, 1, 0);
-      
-            if (setup.GetKeyboard()->KeyDown('F'))
+            
+            if (setup.GetHandleInput() && setup.GetKeyboard()->KeyDown('F'))
                 IO::StdOut().WriteTextLine((Frontend::String)setup.GetFPS());
-      
+
             // Run the test scene
             firstScene.run();
         }
