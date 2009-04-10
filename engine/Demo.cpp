@@ -1,5 +1,6 @@
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
+#include <Studio.h>
 #include "Demo.h"
 #include "Debug.h"
 
@@ -289,6 +290,17 @@ namespace FirstEngine
         state = new State();
         state->Resolution.Push(resolution);
         state->GraphicsDevice.Push(graphicsDevice);
+
+        // Studio
+#ifdef STUDIO
+        SetShowCursor(false);
+        studio = new Studio::Root(window, graphicsDevice);
+	studio->SetDataFolder(RFileSystem("Studio"));
+	studio->SetFontFace(RBitmapFont("Studio/Arial.ttf:11"));
+	//studio->SetAudioOutlet(AudioOutlet);
+	//studio->SetBPM(BPM);
+	studio->Pause();
+#endif
 
         // Done
         started = true;

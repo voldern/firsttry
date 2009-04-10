@@ -27,18 +27,20 @@ OBJS_DEMO=\
 	$(OBJS_FIRSTTRY)
 
 CC=g++
-CFLAGS=-Wall -O3 -m32 -g
+CFLAGS=-Wall -O3 -m32 -g -D DEBUG -D STUDIO
 
 INCLUDE_PATH=\
 	-I/home/voldern/Kode/c++/frontend/frontend2/include\
 	-I/home/voldern/Kode/c++/frontend/frontend2utils/include\
-	-I/home/voldern/Kode/c++/frontend/openfrontend/include
+	-I/home/voldern/Kode/c++/frontend/openfrontend/include\
+	-I/home/voldern/Kode/c++/frontend/frontend2addons/Studio
 
 LIB_PATH=\
 	-L/home/voldern/Kode/c++/frontend/openfrontend/lib\
-	-L/home/voldern/Kode/c++/frontend/frontend2utils/lib
+	-L/home/voldern/Kode/c++/frontend/frontend2utils/lib\
+	-L/home/voldern/Kode/c++/frontend/frontend2addons/Studio/lib
 
-LIBS= -lfrontend2utils -lopenfrontend2_cg -lGL -lGLU -lpthread -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lportaudio -logg\
+LIBS= -lfrontendstudio -lfrontend2utils -lopenfrontend2_cg -lGL -lGLU -lpthread -lXrandr -lXrender -lX11 -ljpeg -lpng -lfreetype -lCg -lCgGL -lportaudio -logg\
 	-lvorbis -lvorbisfile
 
 all: firsttry

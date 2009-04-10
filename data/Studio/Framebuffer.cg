@@ -1,0 +1,29 @@
+sampler2D DiffuseMap;
+
+float4 ViewportConformFactor;
+float4 ScreenSpaceConformOffset;
+
+struct VSInput
+{
+	float4 Position: F_POSITION;
+	float2 Texcoord: F_TEXCOORD0;
+};
+
+struct VSOutput
+{
+	float4 Position: POSITION;
+	float2 Texcoord: TEXCOORD0;
+};
+
+VSOutput vsMain(VSInput Input)
+{
+	VSOutput Output;
+	Output.Position = Input.Position * ViewportConformFactor + ScreenSpaceConformOffset;
+	Output.Texcoord = Input.Texcoord;
+	return Output;
+}
+
+float4 psMain(VSOutput Input): COLOR
+{
+	return tex2D(DiffuseMap, Input.Texcoord);
+}

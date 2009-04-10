@@ -3,6 +3,7 @@
 
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
+#include <Studio.h>
 #include "Debug.h"
 
 using namespace Frontend;
@@ -42,6 +43,10 @@ namespace FirstEngine
         Managed<State> state;
         Managed<Debug> debug;
         double time, frameTime, fps;
+
+#ifdef STUDIO
+        Managed<Studio::Root> studio;
+#endif
 
         bool started;    
         bool showCursor;
