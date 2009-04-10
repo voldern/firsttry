@@ -20,7 +20,9 @@ int main(int argc, char** argv)
         setup.SetFileSystemRoot("data");
         setup.SetHandleInput(true);
         setup.SetExitOnEsc(true);
+#ifdef DEBUG
         setup.SetEnableDebug(true);
+#endif
         setup.Start();
 
         double startTime = setup.GetTime();
