@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
 #include "Debug.h"
@@ -27,11 +26,9 @@ namespace FirstEngine
 
     void Debug::DisplayInfo()
     {
-        char output[100];
-        sprintf(output, "%1.0f FPS %1.2f sec", demo->GetFPS(), demo->GetTime());
-       
-        text->DrawText(demo->GetState(), Math::Vector2i(5, 5), Math::Vector4(1, 1, 1, 1), (String)output);
-        //text->DrawText(demo->GetState(), Math::Vector2i(5, 5), Math::Vector4(1, 1, 1, 1), demo->GetFPS());
+        String output = String::Format("%1.0f FPS %1.2f sec", demo->GetFPS(), demo->GetTime());
+
+        text->DrawText(demo->GetState(), Math::Vector2i(5, 5), Math::Vector4(1, 1, 1, 1), output);
     }
 
     void Debug::ForwardTime(float step)
