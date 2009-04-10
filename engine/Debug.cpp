@@ -52,8 +52,8 @@ namespace FirstEngine
     void Debug::Run()
     {
         // Check for option modifiers
-        if (enableControls) {
-            if (demo->GetKeyboard()->KeyDown('I')) {
+        if (enableControls && demo->GetHandleInput()) {
+            if (demo->GetKeyboard()->KeyTrigger('I')) {
                 if (enableInfo)
                     enableInfo = false;
                 else
@@ -61,14 +61,14 @@ namespace FirstEngine
                         
             }
 
-            if (demo->GetKeyboard()->KeyDown('T')) {
+            if (demo->GetKeyboard()->KeyTrigger('T')) {
                 if (enableTimeline)
                     enableTimeline = false;
                 else
                     enableTimeline = true;
             }
 
-            if (demo->GetKeyboard()->KeyDown('C') && demo->GetHandleInput()) {
+            if (demo->GetKeyboard()->KeyTrigger('C')) {
                 if (enableControls)
                     enableControls = false;
                 else
