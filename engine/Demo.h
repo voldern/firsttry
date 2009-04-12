@@ -4,14 +4,20 @@
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
 #include <Studio.h>
+
+#ifdef DEBUG
 #include "Debug.h"
+#endif
 
 using namespace Frontend;
 using namespace Frontend::Utils;
 
 namespace FirstEngine 
 {
+
+#ifdef DEBUG
     class Debug;
+#endif
 
     class Demo: public Object
     {
@@ -41,18 +47,21 @@ namespace FirstEngine
         Managed<Keyboard> keyboard;
         Managed<Mouse> mouse;
         Managed<State> state;
-        Managed<Debug> debug;
         double time, frameTime, fps;
 
 #ifdef STUDIO
         Managed<Studio::Root> studio;
 #endif
+#ifdef DEBUG
+        Managed<Debug> debug;
+        bool enableDebug;
+#endif
+
 
         bool started;    
         bool showCursor;
         bool handleInput;
         bool exitOnEsc;
-        bool enableDebug;
     
     public:
         /**
@@ -78,7 +87,10 @@ namespace FirstEngine
         void SetShowCursor(bool showCursor);
         void SetExitOnEsc(bool exit);
         void SetHandleInput(bool handle);
+
+#ifdef DEBUG
         void SetEnableDebug(bool enable);
+#endif
 
         // Getters
         GUI::WindowManager* GetWindowManager() { return windowManager; }

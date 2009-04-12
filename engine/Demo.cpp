@@ -34,7 +34,10 @@ namespace FirstEngine
         this->fps = 1000.0;
         this->exitOnEsc = false;
         this->handleInput = false;
+
+#ifdef DEBUG
         this->enableDebug = false;
+#endif
     }
 
     /*
@@ -132,11 +135,13 @@ namespace FirstEngine
         this->handleInput = handle;
     }
 
+#ifdef DEBUG
     void Demo::SetEnableDebug(bool enable)
     {
         if (started) throw new Exception("Demo::SetEnableDebug(): Can not enable debug after Demo is started");
         this->enableDebug = enable;
     }
+#endif
 
     /**
      * Getters
@@ -305,9 +310,12 @@ namespace FirstEngine
         // Done
         started = true;
         
+#ifdef DEBUG
         // Debug
         if (enableDebug)
-          this->debug = new Debug(this);
+            this->debug = new Debug(this);
+#endif
+
     }
 
     bool Demo::Update()
@@ -318,7 +326,7 @@ namespace FirstEngine
 
         // Debug
         if (enableDebug)
-          debug->Run();
+            debug->Run();
 
         time = timer->GetTime();
         frameTime = timer->GetInterval();
