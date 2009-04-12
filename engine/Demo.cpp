@@ -298,7 +298,10 @@ namespace FirstEngine
 
         // Studio
 #ifdef STUDIO
-        SetShowCursor(false);
+        SetShowCursor(true);
+        SetExitOnEsc(false);
+        SetHandleInput(false);
+
         studio = new Studio::Root(window, graphicsDevice);
 	studio->SetDataFolder(RFileSystem("Studio"));
 	studio->SetFontFace(RBitmapFont("Studio/Arial.ttf:11"));
@@ -306,7 +309,6 @@ namespace FirstEngine
 	//studio->SetBPM(BPM);
 	studio->Pause();
 #endif
-
         // Done
         started = true;
         
@@ -324,13 +326,27 @@ namespace FirstEngine
         if (exitOnEsc == true && keyboard->KeyDown(GUI::KeyEsc))
             return false;
 
-        // Debug
-        if (enableDebug)
-            debug->Run();
-
         time = timer->GetTime();
         frameTime = timer->GetInterval();
         fps = timer->GetFPS();
+
+#ifdef DEBUG
+        // Debug
+        if (enableDebug)
+            debug->Run();
+#endif
+
+#ifdef STUDIO
+        // Probes
+        PFloat("Demo.FPS") = fps;
+        PFloat("Demo.Time") = time;
+
+        studio->Draw();
+        Studio::GUI::Widget::CleanUp();
+
+        if (!studio->Update()) return false;
+#endif
+
         graphicsDevice->Update();
         return windowManager->Update();
     }

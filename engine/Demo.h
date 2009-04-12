@@ -57,7 +57,6 @@ namespace FirstEngine
         bool enableDebug;
 #endif
 
-
         bool started;    
         bool showCursor;
         bool handleInput;
