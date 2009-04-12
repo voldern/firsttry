@@ -182,6 +182,12 @@ namespace FirstEngine
         return proxy;
     }
 
+    Framebuffer* Demo::GetFramebuffer()
+    {
+        if (!started) throw Exception("Demo::GetFramebuffer(): Can not get framebuffer before Demo is started");
+        return framebuffer;
+    }
+
     FramebufferProxy* Demo::GetFramebufferProxy()
     {
         if (!started) throw Exception("Demo::GetFramebufferProxy(): Can not get proxy before Demo is started");
@@ -282,6 +288,9 @@ namespace FirstEngine
         // Set up framebufferproxy
         fproxy = new FramebufferProxy(graphicsDevice);
 
+        // Set up framebuffer
+        framebuffer = new Framebuffer(resolution.x, resolution.y, 0, PixelFormatR8G8B8A8, true, false);
+
         // Set up timer
         timer = new Timer();
 
@@ -345,6 +354,14 @@ namespace FirstEngine
         Studio::GUI::Widget::CleanUp();
 
         if (!studio->Update()) return false;
+#else
+        Math::Rectangle<int> backbufferRect(0, 0, resolution.x, resolution.y);
+
+        framebuffer->Lock();
+        graphicsDevice->GetBackbufferSurface()->Copy(framebuffer->BindAsSurface(), backbufferRect, 
+                                                     backbufferRect, Graphics::FilterModeNearest);
+        framebuffer->UnbindAsSurface();
+        framebuffer->Unlock();
 #endif
 
         graphicsDevice->Update();

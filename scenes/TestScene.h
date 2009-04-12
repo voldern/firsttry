@@ -31,6 +31,10 @@ namespace FirstTry
 
         void run() 
         {
+            demo->GetFramebuffer()->Lock();
+            demo->GetState()->RenderTarget.Push(demo->GetFramebuffer());
+            
+            demo->GetFramebuffer()->Clear(Graphics::ClearBuffersAll, 0.3, 0.35, 0.65, 0, 1, 0);
             demo->GetGraphicsDevice()->Clear(Graphics::ClearBuffersAll, 0.3, 0.35, 0.65, 0, 1, 0);
 
             float walkSpeed = 50.0f;
@@ -54,6 +58,9 @@ namespace FirstTry
             }
 
             this->renderer->Render(demo->GetState(), *this->level);
+            
+            demo->GetState()->RenderTarget.Pop();
+            demo->GetFramebuffer()->Unlock();
         }
     };
 }

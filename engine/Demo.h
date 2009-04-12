@@ -40,6 +40,7 @@ namespace FirstEngine
         Managed<IO::Stream> stdOut;
         Managed<IO::Stream> stdIn;
         Managed<ResourceProxy> proxy;
+        Managed<Framebuffer> framebuffer;
         Managed<FramebufferProxy> fproxy;
         Managed<ProbeProxy> probeProxy;
         Managed<ProfileProxy> profileProxy;
@@ -99,6 +100,7 @@ namespace FirstEngine
         IO::Stream* GetStdOut();
         IO::Stream* GetStdIn();
         ResourceProxy* GetResourceProxy();
+        Framebuffer* GetFramebuffer();
         FramebufferProxy* GetFramebufferProxy();
         Timer* GetTimer();
         ProbeProxy* GetProbeProxy();

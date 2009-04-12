@@ -28,7 +28,13 @@ namespace FirstEngine
     {
         String output = String::Format("%1.0f FPS %1.2f sec", demo->GetFPS(), demo->GetTime());
 
+        demo->GetFramebuffer()->Lock();
+        demo->GetState()->RenderTarget.Push(demo->GetFramebuffer());
+
         text->DrawText(demo->GetState(), Math::Vector2i(5, 5), Math::Vector4(1, 1, 1, 1), output);
+
+        demo->GetState()->RenderTarget.Pop();
+        demo->GetFramebuffer()->Unlock();
     }
 
     void Debug::ForwardTime(float step)
