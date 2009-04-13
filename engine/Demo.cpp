@@ -1,8 +1,14 @@
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
-#include <Studio.h>
 #include "Demo.h"
+
+#ifdef STUDIO
+#include <Studio.h>
+#endif
+
+#ifdef DEBUG
 #include "Debug.h"
+#endif
 
 using namespace Frontend;
 using namespace Frontend::Utils;

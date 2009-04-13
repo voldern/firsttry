@@ -3,7 +3,10 @@
 
 #include <OpenFrontend2.h>
 #include <Frontend2Utils.h>
+
+#ifdef STUDIO
 #include <Studio.h>
+#endif
 
 #ifdef DEBUG
 #include "Debug.h"
